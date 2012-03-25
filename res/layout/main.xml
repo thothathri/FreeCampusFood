@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    >
+<TextView
+android:id="@+id/widget33"
+android:layout_width="340px"
+android:layout_height="220px"
+android:background="@drawable/backgrnd"
+android:textColor="#54A4DE"
+android:padding="5px"
+android:layout_marginTop="20px"
+android:layout_marginLeft="20px"
+android:layout_marginRight="20px"
+android:text="Campus Foodie"
+android:textSize="46sp"
+android:typeface="sans"
+android:textStyle="bold"
+android:gravity="center"
+android:layout_gravity="center_horizontal"
+>
+</TextView>
+
+ <Button
+android:text="@string/events"
+android:id="@+id/search"
+android:background="@drawable/custombutton"
+android:textColor="#FFF"
+android:layout_width="240px"
+android:layout_height="80px"
+android:layout_marginTop="40px"
+android:typeface="sans"
+android:textStyle="bold"
+android:gravity="center"
+android:layout_gravity="center_horizontal"
+>
+</Button>
+<Button
+android:id="@+id/widget34"
+android:layout_width="240px"
+android:layout_height="80px"
+android:background="@drawable/custombutton"
+android:textColor="#FFF"
+android:layout_marginTop="20px"
+android:text="Add new event"
+android:typeface="sans"
+android:textStyle="bold"
+android:layout_gravity="center_horizontal"
+>
+</Button>   
+ 
+</LinearLayout>
