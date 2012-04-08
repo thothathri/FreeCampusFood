@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.thotha.freecampusfood.SliderContainer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.thotha.freecampusfood"
+    android:id="@+id/dateSliderContainer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <com.thotha.freecampusfood.ScrollLayout
+        style="@style/Scroller"
+        app:labelerClass="com.thotha.freecampusfood.labeler.MonthYearLabeler"
+        app:labelerFormat="%tb %tY"
+        app:childWidth="180dp"/>
+    <com.thotha.freecampusfood.ScrollLayout
+        style="@style/Scroller"
+        app:labelerClass="com.thotha.freecampusfood.labeler.DayDateLabeler"
+        app:labelerFormat="%td %ta"
+        app:childWidth="120dp"/>
+    <com.thotha.freecampusfood.ScrollLayout
+        style="@style/Scroller"
+        app:labelerClass="com.thotha.freecampusfood.DateSlider.labeler.TimeLabeler"
+        app:labelerFormat="%tR"
+        app:childWidth="80dp"/>
+    <include layout="@layout/dialogbuttons"/>
+</com.thotha.freecampusfood.SliderContainer>

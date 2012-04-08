@@ -39,7 +39,7 @@ android:layout_gravity="center_horizontal"
 >
 </Button>
 <Button
-android:id="@+id/widget34"
+android:id="@+id/newevent"
 android:layout_width="240px"
 android:layout_height="80px"
 android:background="@drawable/custombutton"
