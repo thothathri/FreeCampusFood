@@ -56,8 +56,10 @@ containing a value of this type.
         public static final int left_shadow=0x7f020006;
         public static final int list=0x7f020007;
         public static final int main_icon=0x7f020008;
-        public static final int right_shadow=0x7f020009;
-        public static final int slider_back=0x7f02000a;
+        public static final int pizza=0x7f020009;
+        public static final int pizza_slice=0x7f02000a;
+        public static final int right_shadow=0x7f02000b;
+        public static final int slider_back=0x7f02000c;
     }
     public static final class id {
         public static final int alternativeDateSelectButton=0x7f060002;
@@ -74,24 +76,27 @@ containing a value of this type.
         public static final int description=0x7f060019;
         public static final int editText1=0x7f060012;
         public static final int endtimeSelectButton=0x7f060018;
+        public static final int food=0x7f060014;
         public static final int listView1=0x7f06000e;
-        public static final int map_view=0x7f06001f;
+        public static final int location=0x7f060015;
+        public static final int map_view=0x7f060020;
         public static final int monthYearDateSelectButton=0x7f060004;
         public static final int newevent=0x7f060011;
+        public static final int progressBar1=0x7f06001b;
         public static final int search=0x7f060010;
         public static final int selectedDateLabel=0x7f060008;
         public static final int selectedEndTime=0x7f060017;
         public static final int selectedStartTime=0x7f060016;
-        public static final int textView1=0x7f06001b;
-        public static final int textView2=0x7f06001c;
-        public static final int textView3=0x7f06001d;
-        public static final int textView4=0x7f06001e;
+        public static final int textView1=0x7f06001c;
+        public static final int textView2=0x7f06001d;
+        public static final int textView3=0x7f06001e;
+        public static final int textView4=0x7f06001f;
         public static final int timeLimitSelectButton=0x7f060006;
         public static final int timeSelectButton=0x7f060005;
+        public static final int title=0x7f060013;
         public static final int widget33=0x7f06000f;
-        public static final int widget34=0x7f060013;
-        public static final int widget35=0x7f060014;
-        public static final int widget36=0x7f060015;
+        public static final int widget35=0x7f060021;
+        public static final int widget36=0x7f060022;
     }
     public static final class layout {
         public static final int date=0x7f030000;
@@ -103,10 +108,11 @@ containing a value of this type.
         public static final int main=0x7f030006;
         public static final int my_list=0x7f030007;
         public static final int newevent=0x7f030008;
-        public static final int show=0x7f030009;
-        public static final int simple_main=0x7f03000a;
-        public static final int splash=0x7f03000b;
-        public static final int timeslider=0x7f03000c;
+        public static final int postjson=0x7f030009;
+        public static final int show=0x7f03000a;
+        public static final int simple_main=0x7f03000b;
+        public static final int splash=0x7f03000c;
+        public static final int timeslider=0x7f03000d;
     }
     public static final class string {
         public static final int app_name=0x7f040001;

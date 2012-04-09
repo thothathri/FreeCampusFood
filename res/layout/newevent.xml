@@ -21,7 +21,7 @@
         android:textColor="#54A4DE" />
 
     <EditText
-        android:id="@+id/widget34"
+        android:id="@+id/title"
         android:layout_width="290dp"
         android:layout_height="34dp"
         android:layout_marginLeft="10dp"
@@ -33,7 +33,7 @@
     </EditText>
 
     <EditText
-        android:id="@+id/widget35"
+        android:id="@+id/food"
         android:layout_width="290dp"
         android:layout_height="34dp"
         android:layout_marginLeft="10dp"
@@ -43,7 +43,7 @@
         android:textSize="16sp" />
 
     <EditText
-        android:id="@+id/widget36"
+        android:id="@+id/location"
         android:layout_width="290dp"
         android:layout_height="34dp"
         android:layout_marginLeft="10dp"
