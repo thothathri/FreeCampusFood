@@ -12,6 +12,7 @@ import android.widget.Button;
 public class MenuScreen  extends Activity {
 	private Button searchButton;
 	private Button eventButton;
+	private Button futureButton;
 //	private Button newEventButton;
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,14 @@ public class MenuScreen  extends Activity {
 			startActivity(intent);
   	    }
   	});
+  	this.futureButton = (Button)this.findViewById(R.id.future);
+    //  this.newEventButton = (Button)this.findViewById(R.id.widget34);
+	  this.futureButton.setOnClickListener(new OnClickListener() {
+	    public void onClick(View v) {
+			Intent intent = new Intent(MenuScreen.this, FutureEvent.class);
+			startActivity(intent);
+	    }
+	});
   	  this.eventButton = (Button)this.findViewById(R.id.newevent);
   	  this.eventButton.setOnClickListener(new OnClickListener() {
   	    public void onClick(View v) {

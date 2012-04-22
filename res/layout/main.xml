@@ -5,6 +5,7 @@
     android:layout_height="fill_parent"
     android:background="@drawable/bg"
     >
+
 <TextView
 android:id="@+id/widget33"
 android:layout_width="340px"
@@ -38,6 +39,20 @@ android:gravity="center"
 android:layout_gravity="center_horizontal"
 >
 </Button>
+
+ <Button
+     android:id="@+id/future"
+     android:layout_width="240px"
+     android:layout_height="80px"
+     android:layout_gravity="center_horizontal"
+     android:layout_marginTop="20px"
+     android:background="@drawable/custombutton"
+     android:gravity="center"
+     android:text="Future Events"
+     android:textColor="#FFF"
+     android:textStyle="bold"
+     android:typeface="sans" />
+
 <Button
 android:id="@+id/newevent"
 android:layout_width="240px"
@@ -50,6 +65,18 @@ android:typeface="sans"
 android:textStyle="bold"
 android:layout_gravity="center_horizontal"
 >
-</Button>   
+</Button>
+
+<Button
+    android:id="@+id/helpButton"
+    android:layout_width="240px"
+    android:layout_height="80px"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="20px"
+    android:background="@drawable/custombutton"
+    android:text="Help"
+    android:textColor="#FFF"
+    android:textStyle="bold"
+    android:typeface="sans" />
  
 </LinearLayout>
