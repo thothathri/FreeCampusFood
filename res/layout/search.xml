@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg" > >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="290dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_x="14px"
+        android:layout_y="34px"
+        android:background="@drawable/backgrnd"
+        android:gravity="center"
+        android:text="Search for food"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/food"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_x="14px"
+        android:layout_y="34px"
+        android:hint="Enter free food name"
+        android:textSize="16sp" >
+
+    </EditText>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content" >
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content" >
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="240px"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custombutton"
+        android:gravity="center"
+        android:text="Search"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+</LinearLayout>

@@ -24,22 +24,22 @@ android:gravity="center"
 android:layout_gravity="center_horizontal"
 >
 </TextView>
-
+
  <Button
-android:text="@string/events"
-android:id="@+id/search"
-android:background="@drawable/custombutton"
-android:textColor="#FFF"
-android:layout_width="240px"
-android:layout_height="80px"
-android:layout_marginTop="40px"
-android:typeface="sans"
-android:textStyle="bold"
-android:gravity="center"
-android:layout_gravity="center_horizontal"
->
+     android:id="@+id/search"
+     android:layout_width="240px"
+     android:layout_height="80px"
+     android:layout_gravity="center_horizontal"
+     android:layout_marginTop="20px"
+     android:background="@drawable/custombutton"
+     android:gravity="center"
+     android:text="@string/events"
+     android:textColor="#FFF"
+     android:textStyle="bold"
+     android:typeface="sans" >
+
 </Button>
-
+
  <Button
      android:id="@+id/future"
      android:layout_width="240px"
@@ -48,7 +48,20 @@ android:layout_gravity="center_horizontal"
      android:layout_marginTop="20px"
      android:background="@drawable/custombutton"
      android:gravity="center"
-     android:text="Future Events"
+     android:text="Future events"
+     android:textColor="#FFF"
+     android:textStyle="bold"
+     android:typeface="sans" />
+
+ <Button
+     android:id="@+id/eventsearch"
+     android:layout_width="240px"
+     android:layout_height="80px"
+     android:layout_gravity="center_horizontal"
+     android:layout_marginTop="20px"
+     android:background="@drawable/custombutton"
+     android:gravity="center"
+     android:text="Search events"
      android:textColor="#FFF"
      android:textStyle="bold"
      android:typeface="sans" />

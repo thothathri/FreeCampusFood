@@ -13,6 +13,7 @@ public class MenuScreen  extends Activity {
 	private Button searchButton;
 	private Button eventButton;
 	private Button futureButton;
+	private Button eventSearchButton;
 //	private Button newEventButton;
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,16 @@ public class MenuScreen  extends Activity {
 			startActivity(intent);
 	    }
 	});
+	  
+	  this.eventSearchButton = (Button)this.findViewById(R.id.eventsearch);
+      //  this.newEventButton = (Button)this.findViewById(R.id.widget34);
+  	  this.eventSearchButton.setOnClickListener(new OnClickListener() {
+  	    public void onClick(View v) {
+			Intent intent = new Intent(MenuScreen.this, SearchFood.class);
+			startActivity(intent);
+  	    }
+  	});
+  	  
   	  this.eventButton = (Button)this.findViewById(R.id.newevent);
   	  this.eventButton.setOnClickListener(new OnClickListener() {
   	    public void onClick(View v) {
