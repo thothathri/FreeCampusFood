@@ -11,18 +11,41 @@
     android:orientation="vertical"
     android:background="@drawable/bg" >
 
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/facebook"
+            android:layout_width="140dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Share on FB" />
+
+        <Button
+            android:id="@+id/like"
+            android:layout_width="140dp"
+            android:layout_height="34dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="Vote up!" />
+
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="400px"
-        android:layout_height="120px"
-        android:layout_marginTop="20px"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginLeft="0px"
-        android:text="Large Text"
-        android:textColor="#1A4274"
+        android:layout_marginTop="20px"
         android:background="@drawable/detail"
-        android:textAppearance="?android:attr/textAppearanceLarge" 
         android:gravity="center"
-        android:layout_gravity="center_horizontal"/>
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#1A4274" />
 
     <TextView
         android:id="@+id/textView2"

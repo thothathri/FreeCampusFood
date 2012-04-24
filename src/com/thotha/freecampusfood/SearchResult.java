@@ -145,6 +145,7 @@ public class SearchResult extends Activity {
 						values[i]=jo.getString("title").toString();
 						Log.d("VALUE",values[i]);
 						Map<String, String> datum = new HashMap<String, String>(2);
+						datum.put("id", jo.getString("id").toString());
 						datum.put("title", jo.getString("title").toString());
 						datum.put("food", jo.getString("food").toString());
 						datum.put("location", jo.getString("location").toString());
@@ -188,6 +189,7 @@ public class SearchResult extends Activity {
 									Map<String, String> datum = new HashMap<String, String>(2);
 								datum=data.get(arg2);
 						Bundle bundle = new Bundle();
+						bundle.putString("id", datum.get("id"));
 						bundle.putString("title",datum.get("title"));
 						bundle.putString("food",datum.get("food"));
 						bundle.putString("location",datum.get("location"));

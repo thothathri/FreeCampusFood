@@ -52,7 +52,7 @@ public class DisplayJSON extends Activity {
         setContentView(R.layout.displayjson);
         ListView listView = (ListView) findViewById(R.id.listView1);
         data = new ArrayList<Map<String, String>>();     
-        String imageurl="http://campusfoodie.heroku.com/campus_foods.json";
+        String imageurl="http://warm-mountain-2574.herokuapp.com/campus_foods/today.json";
         URL url = null;
         
 		try 
@@ -133,6 +133,7 @@ public class DisplayJSON extends Activity {
 						Log.d("VALUE",values[i]);
 						Map<String, String> datum = new HashMap<String, String>(2);
 						datum.put("title", jo.getString("title").toString());
+						datum.put("id", jo.getString("id").toString());
 						datum.put("food", jo.getString("food").toString());
 						datum.put("location", jo.getString("location").toString());
 						datum.put("start", jo.getString("start").toString());
@@ -175,6 +176,7 @@ public class DisplayJSON extends Activity {
 									Map<String, String> datum = new HashMap<String, String>(2);
 								datum=data.get(arg2);
 						Bundle bundle = new Bundle();
+						bundle.putString("id", datum.get("id"));
 						bundle.putString("title",datum.get("title"));
 						bundle.putString("food",datum.get("food"));
 						bundle.putString("location",datum.get("location"));
