@@ -6,5 +6,6 @@
     <string name="events">Today\'s events </string>
     <string name="splash_screen">Find food on campus! </string>
      <string name="dateSliderTitle">Selected date</string>
+     <string name="locationString">location</string>
     
 </resources>

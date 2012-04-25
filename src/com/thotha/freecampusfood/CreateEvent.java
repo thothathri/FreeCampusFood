@@ -29,6 +29,7 @@ public class CreateEvent extends Activity {
 	private TextView dateText;
 	private TextView timeText;
 	private TextView endTimeText;
+	private TextView locationText;
 	private String title;
 	private String food;
 	private String location;
@@ -37,6 +38,7 @@ public class CreateEvent extends Activity {
 	private Button timeButton;
 	private Button endtimeButton;
 	private Button createEventButton;
+	private Button locButton;
 	
 	static final int DEFAULTDATESELECTOR_ID = 0;
 	static final int DEFAULTTIMESELECTOR_ID = 1;
@@ -47,6 +49,7 @@ public class CreateEvent extends Activity {
 	        dateText = (TextView) this.findViewById(R.id.selectedDateLabel);
 	        timeText = (TextView) this.findViewById(R.id.selectedStartTime);
 	        endTimeText = (TextView) this.findViewById(R.id.selectedEndTime);
+	        locationText = (TextView) this.findViewById(R.id.location);
 	        //title = (TextView) this.findViewById(R.id.title);
 	      
 	        this.defaultButton = (Button) this.findViewById(R.id.defaultDateSelectButton);
@@ -81,6 +84,24 @@ public class CreateEvent extends Activity {
 	                        }               
 	        });
 	        
+	        this.locButton = (Button) this.findViewById(R.id.locationButton);
+	        locButton.setOnClickListener(new OnClickListener() {
+                public void onClick(View arg0) {
+                        // call the internal showDialog method using the predefined ID
+                	    Log.d("TTTT","Here here here!!!!!!");
+    					Intent intent = new Intent(CreateEvent.this, LocationsJSON.class);
+    					startActivity(intent);
+                }               
+});
+	        try{
+	        	 Bundle bundle = this.getIntent().getExtras();
+	 	         String loc = bundle.getString("location");
+	 	         Log.d("location in bundle is", loc);
+	 	        EditText l = ((EditText) findViewById(R.id.location));
+	        	l.setText(loc);
+	        } catch(Exception e){
+	        	Log.d("Error in", "obtaining location");
+	        }
 	        this.createEventButton = (Button)this.findViewById(R.id.create);
 	        createEventButton.setOnClickListener(new OnClickListener() {
 				

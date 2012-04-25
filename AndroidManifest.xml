@@ -58,6 +58,10 @@
             android:name=".CreateLocation"
             android:label="@string/app_name" >
         </activity>
+        		<activity
+            android:name=".LocationsJSON"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

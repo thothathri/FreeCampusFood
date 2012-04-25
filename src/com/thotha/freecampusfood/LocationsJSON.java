@@ -39,7 +39,7 @@ public class LocationsJSON extends Activity{
         setContentView(R.layout.locationsjson);
         ListView listView = (ListView) findViewById(R.id.listView2);
         data = new ArrayList<Map<String, String>>();     
-        String imageurl="http://campusfoodie.heroku.com/locations.json";
+        String imageurl="http://warm-mountain-2574.herokuapp.com/locations.json";
         URL url = null;
         
 		try 
