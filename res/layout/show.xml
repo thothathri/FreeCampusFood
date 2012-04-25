@@ -70,18 +70,19 @@
         android:text="TextView"
         android:gravity="center"
         android:layout_gravity="center_horizontal" />
-
+
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/eventDt"
         android:layout_width="400px"
         android:layout_height="80px"
-        android:layout_marginTop="20px"
+        android:layout_gravity="center_horizontal"
         android:layout_marginLeft="0px"
-        android:textColor="#1A4274"
+        android:layout_marginTop="20px"
         android:background="@drawable/detail"
-        android:text="TextView"
         android:gravity="center"
-        android:layout_gravity="center_horizontal" />
+        android:text="TextView"
+        android:textColor="#1A4274" />
+
 
     <com.google.android.maps.MapView
         android:id="@+id/map_view"

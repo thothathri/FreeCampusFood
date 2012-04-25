@@ -3,6 +3,9 @@ package com.thotha.freecampusfood;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,6 +41,7 @@ import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -49,6 +53,7 @@ public class ShowEvent extends MapActivity implements DialogListener{
 	MapView mv;
 	MapController controller;
 	String eventId;
+	int flag;
 	 private static String APP_ID = "276515325771923"; // Replace your App ID here
 	 
 	    // Instance of Facebook Class
@@ -58,7 +63,10 @@ public class ShowEvent extends MapActivity implements DialogListener{
 	    private SharedPreferences mPrefs;
 
 		private Button btnFbLogin;
-
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yy");
+		Date dt;
+		
+		  //date = (Date)formatter.parse(str_date);  
 		private Button btnPostToWall;
 		Facebook facebookClient;
     @Override
@@ -103,16 +111,28 @@ public class ShowEvent extends MapActivity implements DialogListener{
         String l = new String(bundle.getString("location"));
         String location = ("Location:\n"+bundle.getString("location"));
         String start = ("Time:  "+bundle.getString("start"));
-        TextView startView = (TextView) findViewById(R.id.textView4);
+        String eventDate = new String(bundle.getString("date"));
+        try {
+        	SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
+        	dt = new Date(myFormat.parse(eventDate).getTime()); 
+        	//dt = (Date)formatter.parse(eventDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        String date = ("Date:  "+ dt +"  Time:  "+bundle.getString("start"));
+        //TextView startView = (TextView) findViewById(R.id.textView4);
         TextView titleView = (TextView) findViewById(R.id.textView1);
         TextView foodView = (TextView) findViewById(R.id.textView2);
         TextView locationView = (TextView) findViewById(R.id.textView3);
+        TextView dateView = (TextView) findViewById(R.id.eventDt);
         foodView.setText(food);
         titleView.setText(title);
-        startView.setText(start);
+        //startView.setText(start);
         locationView.setText(location);
+        dateView.setText(date);
         Log.d("Before Map","hello");
-        mv = (MapView)findViewById(R.id.map_view);
+        /*mv = (MapView)findViewById(R.id.map_view);
         controller = mv.getController();
         Geocoder coder = new Geocoder(this);
         List<Address> address = null;
@@ -137,7 +157,7 @@ public class ShowEvent extends MapActivity implements DialogListener{
         HelloItemizedOverlay itemizedoverlay = new HelloItemizedOverlay(drawable, this);
         OverlayItem overlayitem = new OverlayItem(point, t, f);
         itemizedoverlay.addOverlay(overlayitem);
-        mapOverlays.add(itemizedoverlay); 
+        mapOverlays.add(itemizedoverlay);*/ 
     }
 
 	@Override
@@ -200,9 +220,10 @@ public class ShowEvent extends MapActivity implements DialogListener{
            // post on user's wall.
           //facebook.dialog(this, "feed", new DialogListener() {
        	Bundle parameters = new Bundle();
-           parameters.putString("message", "this is a new test");
+           //parameters.putString("message", "this is a new test");
            parameters.putString("link", "www.campusfoodie.heroku.com");
-           parameters.putString("description", "Evetn: Seminar Free food: Pizza");
+           Bundle bundle = this.getIntent().getExtras();
+           parameters.putString("description", "Event:  "+bundle.getString("title")+", Food:  "+bundle.getString("food")+"\n Time:  "+bundle.getString("start"));
            
            facebook.dialog(this, "feed", parameters,new DialogListener(){
                public void onFacebookError(FacebookError e) {
@@ -226,6 +247,7 @@ public class ShowEvent extends MapActivity implements DialogListener{
 		    mAsyncRunner.request("me", new RequestListener() {
 		        public void onComplete(String response, Object state) {
 		            Log.d("Profile", response);
+		            
 		            String json = response;
 		            try {
 		                JSONObject profile = new JSONObject(json);
@@ -248,6 +270,10 @@ public class ShowEvent extends MapActivity implements DialogListener{
 	    		            HttpResponse resp = httpclient.execute(httppost);
 	    		            Log.d("QQQQQQ",resp.getStatusLine().toString());
 	    		            Log.d("**********response is: ", resp.toString());
+	    		            if(resp.getStatusLine().toString().indexOf('4')!=-1)
+	    		            {
+	    		            	flag = 1;
+	    		            }
 	    		        } catch (ClientProtocolException e) {
 	    		            // TODO Auto-generated catch block
 	    		        } catch (IOException e) {
@@ -266,7 +292,10 @@ public class ShowEvent extends MapActivity implements DialogListener{
 		                     runOnUiThread(new Runnable() {
 		 
 		                    public void run() {
-		                        Toast.makeText(getApplicationContext(), "Name: " + name + "\nEmail: " + id, Toast.LENGTH_LONG).show();
+		                        //Toast.makeText(getApplicationContext(), "Name: " + name + "\nEmail: " + id, Toast.LENGTH_LONG).show();
+		                        if(flag ==1){
+		                        	Toast.makeText(getApplicationContext(), "You cannot vote more than once!",Toast.LENGTH_LONG).show();
+		                        }
 		                    }
 		 
 		                });
