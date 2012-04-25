@@ -1,11 +1,16 @@
 package com.thotha.freecampusfood;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +24,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -52,6 +58,7 @@ import android.widget.Toast;
 public class ShowEvent extends MapActivity implements DialogListener{
 	MapView mv;
 	MapController controller;
+	List<Map<String, String>> data;
 	String eventId;
 	int flag;
 	 private static String APP_ID = "276515325771923"; // Replace your App ID here
@@ -99,10 +106,79 @@ public class ShowEvent extends MapActivity implements DialogListener{
             	getProfileInformation();	
                 }
         });
-
+        Log.d("Temp Acco","ABCD");
         Bundle bundle = this.getIntent().getExtras();
         
         eventId = new String(bundle.getString("id"));
+        /////////////////////////////////////////////////
+        data = new ArrayList<Map<String, String>>();     
+        String imageurl="http://warm-mountain-2574.herokuapp.com/campus_foods/"+eventId+".json";
+        URL url = null;
+        
+		try 
+		{
+			url = new URL(imageurl);
+		} 
+
+		catch (MalformedURLException e2) 
+		{
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+
+        InputStream is = null;
+        URLConnection connection = null;
+        
+		try 
+		{
+			connection = url.openConnection();
+		} 
+
+		catch (IOException e2) 
+		{
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+		}
+
+        Log.d("BACCCCCCKKKKK", "1.0");
+        String line;
+        StringBuilder builder = new StringBuilder();
+        BufferedReader reader = null;
+        
+        try 
+        {
+			reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+		} 
+        
+        catch (IOException e1) 
+        {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+		} //problem is here
+        
+        Log.d("read", "2.0");
+        
+        try 
+        {
+			while ((line = reader.readLine()) != null) 
+			{
+				builder.append(line);
+			}
+		} 
+        
+        catch (IOException e1) 
+        {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+        
+        Log.d("done read", "3.0");
+        String jSONString = builder.toString();
+        //after cutting off the junk, its ok
+        Log.d("response", "String is : "+jSONString);
+		TextView newtv = (TextView)this.findViewById(R.id.textView5);
+        newtv.setText(jSONString+"Votes");        
+        //////////////////////////////////////////////////
         Log.d("Event id:" , eventId);
         String title = ("Event:  "+bundle.getString("title"));
         String t = new String(bundle.getString("title"));

@@ -33,6 +33,13 @@
             android:text="Vote up!" />
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="96dp"
+        android:layout_height="31dp"
+        android:text="TextView"
+        android:textColor="#1A4274" />
 
     <TextView
         android:id="@+id/textView1"

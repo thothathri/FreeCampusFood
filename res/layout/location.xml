@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"
+        android:layout_marginTop="20px"
+        android:background="@drawable/backgrnd"
+        android:ems="10"
+        android:gravity="center"
+        android:padding="5px"
+        android:text="Enter location details"
+        android:textColor="#54A4DE" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="290dp"
+        android:layout_height="125dp"
+		android:maxLines="5"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Location Address"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/location"
+        android:layout_width="240px"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custombutton"
+        android:gravity="center"
+        android:text="Add Location"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+</LinearLayout>
